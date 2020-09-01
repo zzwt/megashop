@@ -1,5 +1,7 @@
+import Auth from "../components/_app/Auth";
+
 function Account() {
   return <>account</>;
 }
 
-export default Account;
+export default Auth(Account);

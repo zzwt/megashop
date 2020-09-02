@@ -1,6 +1,6 @@
 const baseUrl =
   process.NODE_ENV === "production"
-    ? "https://aaaaaa"
+    ? "https://megashop.vercel.app/"
     : "http://localhost:3000";
 
 export default baseUrl;

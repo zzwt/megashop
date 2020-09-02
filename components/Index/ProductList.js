@@ -1,6 +1,7 @@
 import { Card, Image } from "semantic-ui-react";
+import ProductPagination from "./ProductPagination";
 
-function ProductList({ products }) {
+function ProductList({ products, totalPages }) {
   const renderProducts = () => {
     return products.map((product) => {
       return (
@@ -25,6 +26,7 @@ function ProductList({ products }) {
       <Card.Group itemsPerRow="3" centered>
         {renderProducts()}
       </Card.Group>
+      <ProductPagination totalPages={totalPages} />
     </>
   );
 }

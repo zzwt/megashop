@@ -28,7 +28,7 @@ const privilegeIsLower = (userRole, requiredRole) => {
     case "admin":
       return requiredRole === "root" ? true : false;
     case "root":
-      return requiredRole === "root" ? false : true;
+      return false;
   }
 };
 

@@ -1,4 +1,4 @@
-import Auth from "../components/_app/Auth";
+import Auth from "../components/_App/Auth";
 import AccountHeader from "../components/Account/AccountHeader";
 import AccountOrders from "../components/Account/AccountOrders";
 import AccountPermissions from "../components/Account/AccountPermissions";

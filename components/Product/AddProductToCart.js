@@ -43,7 +43,6 @@ function AddProductToCart({ productId, user }) {
   };
 
   const onValueChange = (event) => {
-    console.log(event.target.value);
     setQuantity(Number(event.target.value));
   };
 

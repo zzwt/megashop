@@ -1,4 +1,5 @@
 import Product from "../../models/Product";
+import Cart from "../../models/Cart";
 import connectDb from "../../utils/connectDb";
 
 connectDb();
@@ -51,6 +52,12 @@ const createProduct = async (req, res) => {
 const deleteProduct = async (req, res) => {
   try {
     await Product.findOneAndRemove({ _id: req.query._id });
+    await Cart.updateMany(
+      { "products.product": req.query._id },
+      {
+        $pull: { products: { product: req.query._id } },
+      }
+    );
     return res.status(200).send("Product Removed");
   } catch (error) {
     console.error(error);

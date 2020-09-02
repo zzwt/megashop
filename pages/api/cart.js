@@ -83,8 +83,6 @@ const addToCart = async (req, res) => {
   try {
     const cart = await Cart.findOne({ user: userId });
     if (cart) {
-      console.log(cart);
-
       const productInCart = cart.products.find((cartItem) => {
         return ObjectId(productId).equals(cartItem.product);
       });

@@ -1,5 +1,11 @@
 import mongoose from "mongoose";
-const connection = {};
+let connection;
+if (process.env.NODE_ENV === "development") {
+  if (!global.connection) global.connection = {};
+  connection = global.connection;
+} else {
+  connection = {};
+}
 
 async function connectDb() {
   if (connection.isConnected) {

@@ -34,7 +34,6 @@ function Cart({ products, user }) {
   };
 
   const onClosed = () => {
-    console.log("on closed");
     setLoading(false);
   };
 
@@ -90,7 +89,6 @@ Cart.getInitialProps = async (ctx) => {
     headers: { Authorization: token },
   };
   const response = await axios.get(url, payload);
-  console.log(response.data);
   return { products: response.data };
 };
 

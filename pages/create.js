@@ -54,7 +54,6 @@ function CreateProduct() {
     setLoading(true);
     setError(null);
     try {
-      console.log(data);
       const mediaUrl = await handleImageUpload(data.media);
       const url = `${baseUrl}/api/product`;
       const payload = { ...data, mediaUrl };
@@ -84,7 +83,6 @@ function CreateProduct() {
     data.append("cloud_name", process.env.CLOUD_NAME);
     const response = await axios.post(process.env.CLOUDINARY_URL, data);
     const mediaUrl = response.data.url;
-    console.log(mediaUrl);
     return mediaUrl;
   };
 

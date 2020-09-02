@@ -8,13 +8,13 @@ import {
   Segment,
   Button,
 } from "semantic-ui-react";
+import formatDate from "../../utils/formatDate";
 import React, { useState } from "react";
 import { useRouter } from "next/router";
 function AccountOrders({ orders }) {
   const router = useRouter();
   const [activeIndex, setActiveIndex] = useState(0);
   const handleClick = (event, data) => {
-    console.log(data);
     setActiveIndex(data.index);
   };
   const renderProducts = (products) => {
@@ -48,7 +48,7 @@ function AccountOrders({ orders }) {
             onClick={handleClick}
           >
             <Icon name="dropdown" />
-            <Label color="blue">{order.createdAt}</Label>
+            <Label color="blue">{formatDate(order.createdAt)}</Label>
           </Accordion.Title>
           <Accordion.Content active={activeIndex === index}>
             <Header as="h4">

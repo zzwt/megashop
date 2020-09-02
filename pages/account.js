@@ -6,7 +6,6 @@ import baseUrl from "../utils/baseUrl";
 import axios from "axios";
 import { parseCookies } from "nookies";
 function Account({ user, orders }) {
-  console.log("orders:", orders);
   return (
     <>
       <AccountHeader user={user} />
